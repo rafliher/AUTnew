@@ -1,4 +1,4 @@
-import unittest, sys
+import unittest, sys, os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -14,8 +14,8 @@ class AutTest(unittest.TestCase):
         self.addCleanup(self.browser.quit)
 
     def test_homepage(self):
-        if len(sys.argv) > 1:
-            url = sys.argv[1]
+        if os.environ['URL']:
+            url = os.environ['URL']
         else:
             url = "http://localhost"
 
