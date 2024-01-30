@@ -41,7 +41,5 @@ services:
   docker-apache:
     image: my-php-site:latest
     container_name: docker-apache
-    networks:
-      - isolated
     ports:
       - "80:80"
